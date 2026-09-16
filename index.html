@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ndinda Kiminza | ICT Specialist</title>
+
+    <style>
+
+        /* =========================
+           GENERAL
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            line-height: 1.6;
+            color: #3b2723;
+            background: #f4e4c1;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        :root {
+            --sand: #f4e4c1;
+            --light-sand: #fff8e8;
+            --ruby: #9b111e;
+            --dark-ruby: #6d071a;
+            --deep: #321b1b;
+            --gold: #c99a3d;
+            --white: #ffffff;
+            --text: #3b2723;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================== */
+
+        header {
+            background: var(--deep);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.2);
+        }
+
+        nav {
+            max-width: 1150px;
+            margin: auto;
+            padding: 16px 25px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .logo span {
+            color: #d9a441;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 28px;
+        }
+
+        .nav-links a {
+            color: white;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #d9a441;
+        }
+
+        #menuButton {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           HOME / HERO
+        ========================== */
+
+        #home {
+            min-height: 90vh;
+            padding: 70px 25px;
+
+            display: flex;
+            align-items: center;
+
+            background:
+                linear-gradient(
+                    120deg,
+                    #f4e4c1 0%,
+                    #ead0a0 45%,
+                    #9b111e 100%
+                );
+
+            color: var(--deep);
+        }
+
+        .home-container {
+            max-width: 1150px;
+            width: 100%;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            align-items: center;
+            gap: 70px;
+        }
+
+
+        /* =========================
+           PROFILE PHOTO
+        ========================== */
+
+        .profile-photo {
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-photo img {
+            width: 300px;
+            height: 350px;
+
+            object-fit: cover;
+
+            border-radius: 25px;
+
+            border: 8px solid white;
+
+            box-shadow:
+                0 15px 35px rgba(0,0,0,0.25);
+        }
+
+
+        /* =========================
+           HERO CONTENT
+        ========================== */
+
+        .home-content {
+            max-width: 700px;
+        }
+
+        .welcome {
+            color: var(--ruby);
+            font-weight: 800;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .home-content h1 {
+            font-size: 52px;
+            line-height: 1.2;
+            margin-bottom: 12px;
+        }
+
+        .home-content h1 span {
+            color: var(--ruby);
+        }
+
+        .home-content h2 {
+            font-size: 25px;
+            color: var(--dark-ruby);
+            margin-bottom: 20px;
+        }
+
+        .home-content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 27px;
+            background: var(--ruby);
+            color: white;
+            border-radius: 7px;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--dark-ruby);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--ruby);
+            border: 2px solid var(--ruby);
+        }
+
+        .btn-outline:hover {
+            background: var(--ruby);
+            color: white;
+        }
+
+
+        /* =========================
+           GENERAL SECTIONS
+        ========================== */
+
+        .section {
+            max-width: 1150px;
+            margin: auto;
+            padding: 85px 25px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 38px;
+            margin-bottom: 45px;
+            color: var(--deep);
+        }
+
+        .section-title span {
+            color: var(--ruby);
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================== */
+
+        .about-content {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .about-box {
+            background: var(--light-sand);
+            padding: 40px;
+            border-radius: 15px;
+
+            border-top: 5px solid var(--ruby);
+
+            box-shadow:
+                0 8px 25px rgba(70,35,20,0.12);
+        }
+
+        .about-content p {
+            font-size: 17px;
+            margin-bottom: 20px;
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================== */
+
+        #skills {
+            max-width: 100%;
+            background: #ead0a0;
+        }
+
+        .skills-container {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .skill {
+            background: var(--light-sand);
+            padding: 30px;
+            text-align: center;
+            border-radius: 15px;
+
+            border-bottom: 4px solid var(--ruby);
+
+            box-shadow:
+                0 6px 18px rgba(60,30,20,0.12);
+
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-8px);
+        }
+
+        .skill h3 {
+            color: var(--ruby);
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+
+        /* =========================
+           PROJECTS
+        ========================== */
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .project {
+            background: var(--light-sand);
+            padding: 30px;
+            border-radius: 15px;
+
+            border-left: 5px solid var(--ruby);
+
+            box-shadow:
+                0 6px 18px rgba(60,30,20,0.12);
+
+            transition: 0.3s;
+        }
+
+        .project:hover {
+            transform: translateY(-8px);
+        }
+
+        .project h3 {
+            color: var(--deep);
+            margin-bottom: 15px;
+        }
+
+        .project p {
+            margin-bottom: 15px;
+        }
+
+        .technology {
+            color: #70554d;
+            font-size: 14px;
+        }
+
+        .project-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 9px 17px;
+
+            background: var(--ruby);
+            color: white;
+
+            border-radius: 6px;
+            font-weight: 600;
+        }
+
+        .project-btn:hover {
+            background: var(--dark-ruby);
+        }
+
+
+        /* =========================
+           EDUCATION & PROFESSIONAL
+        ========================== */
+
+        #education {
+            max-width: 100%;
+            background: #ead0a0;
+        }
+
+        .education-container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .education-card {
+            background: var(--light-sand);
+            padding: 30px;
+            margin-bottom: 25px;
+
+            border-left: 6px solid var(--ruby);
+
+            border-radius: 8px;
+
+            box-shadow:
+                0 6px 15px rgba(60,30,20,0.1);
+        }
+
+        .education-card h3 {
+            color: var(--ruby);
+            margin-bottom: 8px;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================== */
+
+        .contact-container {
+            max-width: 700px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .contact-info {
+            margin: 25px 0;
+        }
+
+        .contact-info p {
+            margin: 12px;
+        }
+
+        .contact-info a {
+            color: var(--ruby);
+            font-weight: bold;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 14px;
+
+            border: 1px solid #c7a879;
+            border-radius: 7px;
+
+            font-size: 16px;
+            background: var(--light-sand);
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: 2px solid var(--ruby);
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        form button {
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #messageResult {
+            margin-top: 15px;
+            font-weight: bold;
+            color: var(--ruby);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            background: var(--deep);
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        footer p {
+            margin: 5px;
+        }
+
+        footer span {
+            color: #d9a441;
+        }
+
+
+        /* =========================
+           MOBILE RESPONSIVE DESIGN
+        ========================== */
+
+        @media (max-width: 850px) {
+
+            .nav-links {
+                display: none;
+
+                position: absolute;
+                top: 65px;
+                left: 0;
+
+                width: 100%;
+
+                background: var(--deep);
+
+                flex-direction: column;
+                text-align: center;
+
+                padding: 20px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            #menuButton {
+                display: block;
+            }
+
+            .home-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 35px;
+            }
+
+            .profile-photo {
+                order: 1;
+            }
+
+            .home-content {
+                order: 2;
+                margin: auto;
+            }
+
+            .profile-photo img {
+                width: 230px;
+                height: 270px;
+            }
+
+            .home-content h1 {
+                font-size: 38px;
+            }
+
+            .home-content h2 {
+                font-size: 20px;
+            }
+
+            .buttons {
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .skills-container,
+            .projects-container {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <header>
+
+        <nav>
+
+            <div class="logo">
+                Ndinda <span>Kiminza</span>
+            </div>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+
+                <li>
+                    <a href="#about">About</a>
+                </li>
+
+                <li>
+                    <a href="#skills">Skills</a>
+                </li>
+
+                <li>
+                    <a href="#projects">Projects</a>
+                </li>
+
+                <li>
+                    <a href="#education">Experience</a>
+                </li>
+
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+
+            </ul>
+
+            <button id="menuButton">☰</button>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         HOME
+    ========================== -->
+
+    <section id="home">
+
+        <div class="home-container">
+
+
+            <!-- =================================
+                 YOUR PHOTO
+
+                 Put your photo here:
+
+                 photo.jpg
+            ================================== -->
+
+            <div class="profile-photo">
+
+                <img
+                    src="photo.jpg"
+                    alt="Professional photo of Ndinda Kiminza"
+                >
+
+            </div>
+
+
+            <div class="home-content">
+
+                <p class="welcome">
+                    WELCOME TO MY PROFESSIONAL PORTFOLIO
+                </p>
+
+                <h1>
+                    Hello, I'm
+                    <span>Ndinda Kiminza</span>
+                </h1>
+
+                <h2>
+                    ICT Specialist
+                </h2>
+
+                <p>
+                    I am an ICT Specialist with a diverse range of
+                    technical skills and experience in information
+                    technology, web development, computer systems,
+                    networking, databases and digital solutions.
+                </p>
+
+                <div class="buttons">
+
+                    <a href="#projects" class="btn">
+                        View My Projects
+                    </a>
+
+                    <a href="#contact" class="btn btn-outline">
+                        Contact Me
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section id="about" class="section">
+
+        <h2 class="section-title">
+            About <span>Me</span>
+        </h2>
+
+        <div class="about-content">
+
+            <div class="about-box">
+
+                <p>
+                    My name is Ndinda Kiminza, an ICT Specialist
+                    passionate about using technology to create
+                    practical and effective digital solutions.
+                </p>
+
+                <p>
+                    I have developed skills in web development,
+                    database management, computer systems,
+                    networking, technical support and general
+                    information and communication technology.
+                </p>
+
+                <p>
+                    I am interested in applying ICT to solve real-world
+                    problems for schools, businesses, organizations
+                    and communities.
+                </p>
+
+                <p>
+                    I continuously develop my technical knowledge
+                    and keep improving my ability to design,
+                    implement and support technology solutions.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SKILLS
+    ========================== -->
+
+    <section id="skills" class="section">
+
+        <h2 class="section-title">
+            My <span>ICT Skills</span>
+        </h2>
+
+        <div class="skills-container">
+
+            <div class="skill">
+
+                <h3>Web Development</h3>
+
+                <p>
+                    Creating structured, responsive and
+                    user-friendly websites using modern
+                    web technologies.
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <h3>HTML & CSS</h3>
+
+                <p>
+                    Designing and developing attractive
+                    and responsive web interfaces.
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <h3>JavaScript</h3>
+
+                <p>
+                    Developing interactive web pages and
+                    adding useful website functionality.
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <h3>Database Management</h3>
+
+                <p>
+                    Organizing, storing and managing
+                    information using database systems.
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <h3>Computer Networking</h3>
+
+                <p>
+                    Understanding network configuration,
+                    communication and connectivity.
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <h3>Computer Systems & Support</h3>
+
+                <p>
+                    Computer maintenance, troubleshooting,
+                    software installation and technical support.
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <h3>ICT Technical Support</h3>
+
+                <p>
+                    Providing technical assistance and
+                    solving common ICT-related problems.
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <h3>Digital Solutions</h3>
+
+                <p>
+                    Using technology to develop practical
+                    solutions for individuals and organizations.
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <h3>Information Management</h3>
+
+                <p>
+                    Managing digital information efficiently
+                    and supporting organized data handling.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROJECTS
+    ========================== -->
+
+    <section id="projects" class="section">
+
+        <h2 class="section-title">
+            My <span>Projects</span>
+        </h2>
+
+        <div class="projects-container">
+
+
+            <div class="project">
+
+                <h3>
+                    School Library Management System
+                </h3>
+
+                <p>
+                    A proposed digital system for managing
+                    school books, students, borrowing,
+                    returns and overdue books.
+                </p>
+
+                <p class="technology">
+                    <strong>Technologies:</strong>
+                    HTML, CSS, JavaScript and Database
+                </p>
+
+                <a href="#" class="project-btn">
+                    View Project
+                </a>
+
+            </div>
+
+
+            <div class="project">
+
+                <h3>
+                    Primary School Website
+                </h3>
+
+                <p>
+                    A professional website designed to provide
+                    information about a primary school, its
+                    services, teachers, pupils and activities.
+                </p>
+
+                <p class="technology">
+                    <strong>Technologies:</strong>
+                    HTML, CSS and JavaScript
+                </p>
+
+                <a href="#" class="project-btn">
+                    View Project
+                </a>
+
+            </div>
+
+
+            <div class="project">
+
+                <h3>
+                    Personal Portfolio Website
+                </h3>
+
+                <p>
+                    A professional portfolio website presenting
+                    my ICT skills, projects, professional
+                    background and contact information.
+                </p>
+
+                <p class="technology">
+                    <strong>Technologies:</strong>
+                    HTML, CSS and JavaScript
+                </p>
+
+                <a href="#" class="project-btn">
+                    View Project
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         EXPERIENCE
+    ========================== -->
+
+    <section id="education" class="section">
+
+        <h2 class="section-title">
+            Professional <span>Background</span>
+        </h2>
+
+        <div class="education-container">
+
+            <div class="education-card">
+
+                <h3>
+                    ICT Specialist
+                </h3>
+
+                <p>
+                    Information and Communication Technology
+                </p>
+
+                <p>
+                    Skilled in web development, computer systems,
+                    networking, databases, technical support and
+                    digital technology solutions.
+                </p>
+
+            </div>
+
+
+            <div class="education-card">
+
+                <h3>
+                    Technical Training
+                </h3>
+
+                <p>
+                    Ahmed Shahame Mwidani Technical Training Institute
+                </p>
+
+                <p>
+                    Training and practical development in
+                    Information and Communication Technology.
+                </p>
+
+            </div>
+
+
+            <div class="education-card">
+
+                <h3>
+                    Secondary Education
+                </h3>
+
+                <p>
+                    St. Mary's Komboyoo Girls Secondary School
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section id="contact" class="section">
+
+        <h2 class="section-title">
+            Contact <span>Me</span>
+        </h2>
+
+        <div class="contact-container">
+
+            <p>
+                I would be happy to connect with you
+                regarding ICT projects, technical services
+                and digital solutions.
+            </p>
+
+
+            <div class="contact-info">
+
+                <p>
+
+                    <strong>Email:</strong>
+
+                    <a href="mailto:ndindaredez@gmail.com">
+                        ndindaredez@gmail.com
+                    </a>
+
+                </p>
+
+
+                <p>
+
+                    <strong>GitHub:</strong>
+
+                    <a href="#" id="githubLink">
+                        My GitHub Profile
+                    </a>
+
+                </p>
+
+            </div>
+
+
+            <form id="contactForm">
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Your Name"
+                    required
+                >
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Your Email"
+                    required
+                >
+
+                <textarea
+                    id="message"
+                    rows="5"
+                    placeholder="Your Message"
+                    required
+                ></textarea>
+
+                <button
+                    type="submit"
+                    class="btn"
+                >
+                    Send Message
+                </button>
+
+            </form>
+
+
+            <p id="messageResult"></p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <p>
+            © 2026 Ndinda Kiminza. All Rights Reserved.
+        </p>
+
+        <p>
+            <span>ICT Specialist</span> |
+            Technology & Digital Solutions
+        </p>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        // MOBILE MENU
+
+        const menuButton =
+            document.getElementById("menuButton");
+
+        const navLinks =
+            document.querySelector(".nav-links");
+
+        menuButton.addEventListener(
+            "click",
+            function() {
+
+                navLinks.classList.toggle("active");
+
+            }
+        );
+
+
+        // CLOSE MOBILE MENU
+
+        const links =
+            document.querySelectorAll(".nav-links a");
+
+        links.forEach(
+            function(link) {
+
+                link.addEventListener(
+                    "click",
+                    function() {
+
+                        navLinks.classList.remove("active");
+
+                    }
+                );
+
+            }
+        );
+
+
+        // CONTACT FORM
+
+        const contactForm =
+            document.getElementById("contactForm");
+
+        const messageResult =
+            document.getElementById("messageResult");
+
+        contactForm.addEventListener(
+            "submit",
+            function(event) {
+
+                event.preventDefault();
+
+                const name =
+                    document.getElementById("name").value;
+
+                messageResult.textContent =
+                    "Thank you, " + name +
+                    "! Your message has been received.";
+
+                contactForm.reset();
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>
