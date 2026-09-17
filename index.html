@@ -43,6 +43,7 @@
             --gold: #c99a3d;
             --white: #ffffff;
             --text: #3b2723;
+            --border: #d8b77a;
         }
 
 
@@ -413,66 +414,276 @@
 
 
         /* =========================
-           CONTACT
+           CONTACT SECTION
         ========================== */
 
-        .contact-container {
-            max-width: 700px;
+        #contact {
+            background: var(--sand);
+            max-width: 100%;
+        }
+
+        .contact-wrapper {
+            max-width: 1100px;
             margin: auto;
-            text-align: center;
+
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 45px;
+
+            align-items: stretch;
         }
 
-        .contact-info {
-            margin: 25px 0;
+
+        /* =========================
+           CONTACT LEFT SIDE
+        ========================== */
+
+        .contact-details {
+            background:
+                linear-gradient(
+                    145deg,
+                    var(--ruby),
+                    var(--dark-ruby)
+                );
+
+            color: white;
+
+            padding: 40px;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 12px 30px rgba(70, 20, 20, 0.25);
+
+            position: relative;
+            overflow: hidden;
         }
 
-        .contact-info p {
-            margin: 12px;
+        .contact-details::before {
+            content: "";
+            position: absolute;
+
+            width: 180px;
+            height: 180px;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,0.07);
+
+            top: -70px;
+            right: -60px;
         }
 
-        .contact-info a {
+        .contact-details::after {
+            content: "";
+            position: absolute;
+
+            width: 120px;
+            height: 120px;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,0.05);
+
+            bottom: -50px;
+            left: -40px;
+        }
+
+        .contact-details h3 {
+            font-size: 28px;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-details > p {
+            color: #f8e9d0;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+
+        /* =========================
+           CONTACT CARDS
+        ========================== */
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+
+            background: rgba(255,255,255,0.10);
+
+            border: 1px solid rgba(255,255,255,0.15);
+
+            padding: 18px;
+
+            border-radius: 12px;
+
+            margin-bottom: 15px;
+
+            transition: 0.3s;
+
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-item:hover {
+            background: rgba(255,255,255,0.18);
+            transform: translateX(5px);
+        }
+
+        .contact-icon {
+            width: 45px;
+            height: 45px;
+
+            min-width: 45px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: var(--sand);
+
             color: var(--ruby);
+
+            font-size: 20px;
             font-weight: bold;
         }
 
-        form {
+        .contact-item strong {
+            display: block;
+
+            font-size: 12px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1.2px;
+
+            color: #f4dcae;
+
+            margin-bottom: 3px;
+        }
+
+        .contact-item a {
+            color: white;
+            font-weight: 600;
+
+            word-break: break-word;
+
+            transition: 0.3s;
+        }
+
+        .contact-item a:hover {
+            color: #f4d27c;
+        }
+
+
+        /* =========================
+           CONTACT FORM
+        ========================== */
+
+        .contact-form-box {
+            background: var(--light-sand);
+
+            padding: 40px;
+
+            border-radius: 20px;
+
+            border-top: 6px solid var(--ruby);
+
+            box-shadow:
+                0 12px 30px rgba(70,35,20,0.13);
+        }
+
+        .contact-form-box h3 {
+            font-size: 28px;
+            color: var(--deep);
+            margin-bottom: 8px;
+        }
+
+        .contact-form-box > p {
+            color: #70554d;
+            margin-bottom: 25px;
+        }
+
+        #contactForm {
             display: flex;
             flex-direction: column;
-            gap: 15px;
-            margin-top: 30px;
+            gap: 16px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .form-group label {
+            color: var(--deep);
+            font-weight: 700;
+            font-size: 14px;
         }
 
         input,
         textarea {
             width: 100%;
-            padding: 14px;
+
+            padding: 14px 16px;
 
             border: 1px solid #c7a879;
-            border-radius: 7px;
+
+            border-radius: 8px;
+
+            font-family: inherit;
 
             font-size: 16px;
-            background: var(--light-sand);
+
+            background: white;
+
+            color: var(--text);
+
+            transition: 0.3s;
         }
 
         input:focus,
         textarea:focus {
-            outline: 2px solid var(--ruby);
+            outline: none;
+
+            border-color: var(--ruby);
+
+            box-shadow:
+                0 0 0 3px rgba(155,17,30,0.10);
         }
 
         textarea {
             resize: vertical;
+            min-height: 130px;
         }
 
-        form button {
+        .contact-submit {
             border: none;
+
             cursor: pointer;
+
             font-size: 16px;
+
+            width: 100%;
+
+            margin-top: 5px;
         }
 
         #messageResult {
             margin-top: 15px;
+
             font-weight: bold;
+
             color: var(--ruby);
+
+            text-align: center;
         }
 
 
@@ -566,6 +777,47 @@
                 grid-template-columns: 1fr;
             }
 
+            /* CONTACT MOBILE */
+
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .contact-details,
+            .contact-form-box {
+                padding: 30px 25px;
+            }
+
+        }
+
+
+        @media (max-width: 500px) {
+
+            .section {
+                padding: 65px 18px;
+            }
+
+            .section-title {
+                font-size: 31px;
+            }
+
+            .contact-details h3,
+            .contact-form-box h3 {
+                font-size: 24px;
+            }
+
+            .contact-item {
+                padding: 15px;
+                gap: 12px;
+            }
+
+            .contact-icon {
+                width: 40px;
+                height: 40px;
+                min-width: 40px;
+            }
+
         }
 
     </style>
@@ -615,7 +867,9 @@
 
             </ul>
 
-            <button id="menuButton">☰</button>
+            <button id="menuButton" aria-label="Open navigation menu">
+                ☰
+            </button>
 
         </nav>
 
@@ -629,15 +883,6 @@
     <section id="home">
 
         <div class="home-container">
-
-
-            <!-- =================================
-                 YOUR PHOTO
-
-                 Put your photo here:
-
-                 photo.jpg
-            ================================== -->
 
             <div class="profile-photo">
 
@@ -749,111 +994,76 @@
         <div class="skills-container">
 
             <div class="skill">
-
                 <h3>Web Development</h3>
-
                 <p>
                     Creating structured, responsive and
                     user-friendly websites using modern
                     web technologies.
                 </p>
-
             </div>
 
-
             <div class="skill">
-
                 <h3>HTML & CSS</h3>
-
                 <p>
                     Designing and developing attractive
                     and responsive web interfaces.
                 </p>
-
             </div>
 
-
             <div class="skill">
-
                 <h3>JavaScript</h3>
-
                 <p>
                     Developing interactive web pages and
                     adding useful website functionality.
                 </p>
-
             </div>
 
-
             <div class="skill">
-
                 <h3>Database Management</h3>
-
                 <p>
                     Organizing, storing and managing
                     information using database systems.
                 </p>
-
             </div>
 
-
             <div class="skill">
-
                 <h3>Computer Networking</h3>
-
                 <p>
                     Understanding network configuration,
                     communication and connectivity.
                 </p>
-
             </div>
 
-
             <div class="skill">
-
                 <h3>Computer Systems & Support</h3>
-
                 <p>
                     Computer maintenance, troubleshooting,
                     software installation and technical support.
                 </p>
-
             </div>
 
-
             <div class="skill">
-
                 <h3>ICT Technical Support</h3>
-
                 <p>
                     Providing technical assistance and
                     solving common ICT-related problems.
                 </p>
-
             </div>
 
-
             <div class="skill">
-
                 <h3>Digital Solutions</h3>
-
                 <p>
                     Using technology to develop practical
                     solutions for individuals and organizations.
                 </p>
-
             </div>
 
-
             <div class="skill">
-
                 <h3>Information Management</h3>
-
                 <p>
                     Managing digital information efficiently
                     and supporting organized data handling.
                 </p>
-
             </div>
 
         </div>
@@ -872,7 +1082,6 @@
         </h2>
 
         <div class="projects-container">
-
 
             <div class="project">
 
@@ -1026,75 +1235,200 @@
             Contact <span>Me</span>
         </h2>
 
-        <div class="contact-container">
 
-            <p>
-                I would be happy to connect with you
-                regarding ICT projects, technical services
-                and digital solutions.
-            </p>
+        <div class="contact-wrapper">
 
 
-            <div class="contact-info">
+            <!-- =========================
+                 LEFT CONTACT DETAILS
+            ========================== -->
+
+            <div class="contact-details">
+
+                <h3>
+                    Let's Connect
+                </h3>
 
                 <p>
-
-                    <strong>Email:</strong>
-
-                    <a href="mailto:ndindaredez@gmail.com">
-                        ndindaredez@gmail.com
-                    </a>
-
+                    I would be happy to connect with you regarding
+                    ICT projects, technical services and digital
+                    solutions.
                 </p>
 
 
-                <p>
+                <!-- EMAIL -->
 
-                    <strong>GitHub:</strong>
+                <div class="contact-item">
 
-                    <a href="#" id="githubLink">
-                        My GitHub Profile
-                    </a>
+                    <div class="contact-icon">
+                        @
+                    </div>
 
-                </p>
+                    <div>
+
+                        <strong>Email</strong>
+
+                        <a href="mailto:ndindaredez@gmail.com">
+                            ndindaredez@gmail.com
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PHONE -->
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        ☎
+                    </div>
+
+                    <div>
+
+                        <strong>Phone</strong>
+
+                        <a href="tel:0757462182">
+                            0757462182
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- WHATSAPP -->
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        ✆
+                    </div>
+
+                    <div>
+
+                        <strong>WhatsApp</strong>
+
+                        <a
+                            href="https://wa.me/254791866267"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Chat with me on WhatsApp
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- GITHUB -->
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        &lt;/&gt;
+                    </div>
+
+                    <div>
+
+                        <strong>GitHub</strong>
+
+                        <a
+                            href="https://github.com/ndinda-redez"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            My GitHub Profile
+                        </a>
+
+                    </div>
+
+                </div>
 
             </div>
 
 
-            <form id="contactForm">
+            <!-- =========================
+                 RIGHT CONTACT FORM
+            ========================== -->
 
-                <input
-                    type="text"
-                    id="name"
-                    placeholder="Your Name"
-                    required
-                >
+            <div class="contact-form-box">
 
-                <input
-                    type="email"
-                    id="email"
-                    placeholder="Your Email"
-                    required
-                >
+                <h3>
+                    Send Me a Message
+                </h3>
 
-                <textarea
-                    id="message"
-                    rows="5"
-                    placeholder="Your Message"
-                    required
-                ></textarea>
-
-                <button
-                    type="submit"
-                    class="btn"
-                >
-                    Send Message
-                </button>
-
-            </form>
+                <p>
+                    Have a project or technical question?
+                    Fill in the form below and get in touch.
+                </p>
 
 
-            <p id="messageResult"></p>
+                <form id="contactForm">
+
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            Your Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Enter your name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Your Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="message">
+                            Your Message
+                        </label>
+
+                        <textarea
+                            id="message"
+                            placeholder="Write your message here..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="btn contact-submit"
+                    >
+                        Send Message
+                    </button>
+
+                </form>
+
+
+                <p id="messageResult"></p>
+
+            </div>
 
         </div>
 
@@ -1125,7 +1459,9 @@
 
     <script>
 
-        // MOBILE MENU
+        /* =========================
+           MOBILE MENU
+        ========================== */
 
         const menuButton =
             document.getElementById("menuButton");
@@ -1143,7 +1479,9 @@
         );
 
 
-        // CLOSE MOBILE MENU
+        /* =========================
+           CLOSE MOBILE MENU
+        ========================== */
 
         const links =
             document.querySelectorAll(".nav-links a");
@@ -1164,7 +1502,9 @@
         );
 
 
-        // CONTACT FORM
+        /* =========================
+           CONTACT FORM
+        ========================== */
 
         const contactForm =
             document.getElementById("contactForm");
